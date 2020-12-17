@@ -17,8 +17,9 @@ package com.github.pedrovgs.effectiveandroidui;
 
 import android.app.Application;
 import com.github.pedrovgs.effectiveandroidui.di.RootModule;
-import dagger.ObjectGraph;
 import java.util.List;
+
+import dagger.ObjectGraph;
 
 /**
  * Android Application extension created to get the control of the application lifecycle.

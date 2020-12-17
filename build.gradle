@@ -2,16 +2,21 @@
 
 buildscript {
   repositories {
-    mavenCentral()
-    mavenLocal()
+    google()
+    jcenter()
+    maven {
+      url = uri("https://plugins.gradle.org/m2/")
+      url 'https://maven.google.com'
+    }
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:1.0.1'
+    classpath 'com.android.tools.build:gradle:4.1.0'
   }
 }
 
 allprojects {
   repositories {
+    google()
     // Work around https://code.google.com/p/android/issues/detail?id=69270.
     def androidHome = System.getenv("ANDROID_HOME")
     maven {

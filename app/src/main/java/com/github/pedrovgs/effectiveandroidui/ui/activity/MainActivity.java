@@ -25,6 +25,8 @@ import com.github.pedrovgs.effectiveandroidui.ui.presenter.TvShowUIModule;
 import java.util.LinkedList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 /**
  * Core activity of this application. This activity receives the launch intent and works as core of
  * the sample application.
@@ -37,6 +39,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.setDebug(true);
         initializeTvShowFragment();
         initializeTvShowDraggableFragment();
     }

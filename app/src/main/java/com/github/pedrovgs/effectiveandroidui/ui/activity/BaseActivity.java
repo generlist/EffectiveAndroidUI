@@ -16,7 +16,9 @@
 package com.github.pedrovgs.effectiveandroidui.ui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import butterknife.ButterKnife;
 import com.github.pedrovgs.effectiveandroidui.TvShowsApplication;
 import com.github.pedrovgs.effectiveandroidui.di.ActivityModule;
@@ -30,7 +32,7 @@ import java.util.List;
  *
  * @author Pedro Vicente Gómez Sánchez
  */
-public abstract class BaseActivity extends ActionBarActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
   private ObjectGraph activityScopeGraph;
 
@@ -77,6 +79,6 @@ public abstract class BaseActivity extends ActionBarActivity {
    * value.
    */
   private void injectViews() {
-    ButterKnife.inject(this);
+    ButterKnife.bind(this);
   }
 }

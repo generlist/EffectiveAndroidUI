@@ -21,8 +21,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import com.github.pedrovgs.effectiveandroidui.R;
 import com.github.pedrovgs.effectiveandroidui.domain.tvshow.TvShow;
@@ -44,9 +45,9 @@ public class TvShowRenderer extends Renderer<TvShow> {
   private final Context context;
   private final TvShowCatalogPresenter tvShowCatalogPresenter;
 
-  @InjectView(R.id.iv_thumbnail) ImageView thumbnailImageView;
-  @InjectView(R.id.tv_title) TextView titleTextView;
-  @InjectView(R.id.tv_seasons_counter) TextView seasonsCounterTextView;
+  @BindView(R.id.iv_thumbnail) ImageView thumbnailImageView;
+  @BindView(R.id.tv_title) TextView titleTextView;
+  @BindView(R.id.tv_seasons_counter) TextView seasonsCounterTextView;
 
   @Inject
   public TvShowRenderer(Context context, TvShowCatalogPresenter tvShowCatalogPresenter) {
@@ -55,7 +56,7 @@ public class TvShowRenderer extends Renderer<TvShow> {
   }
 
   @Override protected void setUpView(View rootView) {
-    ButterKnife.inject(this, rootView);
+    ButterKnife.bind(this, rootView);
   }
 
   @Override protected void hookListeners(View rootView) {

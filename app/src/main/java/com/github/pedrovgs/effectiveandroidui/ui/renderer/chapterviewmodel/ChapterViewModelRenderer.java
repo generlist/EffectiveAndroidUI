@@ -20,8 +20,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import com.github.pedrovgs.effectiveandroidui.R;
 import com.github.pedrovgs.effectiveandroidui.ui.viewmodel.ChapterViewModel;
 import com.pedrogomez.renderers.Renderer;
@@ -42,9 +43,9 @@ import javax.inject.Inject;
 public class ChapterViewModelRenderer extends Renderer<ChapterViewModel>
     implements ChapterViewModel.Listener {
 
-  @InjectView(R.id.tv_chapter_number) TextView tv_chapter_number;
-  @InjectView(R.id.tv_chapter_title) TextView tv_chapter_title;
-  @InjectView(R.id.tv_chapter_publish_date) TextView tv_chapter_publish_date;
+  @BindView(R.id.tv_chapter_number) TextView tv_chapter_number;
+  @BindView(R.id.tv_chapter_title) TextView tv_chapter_title;
+  @BindView(R.id.tv_chapter_publish_date) TextView tv_chapter_publish_date;
 
   private final Context context;
 
@@ -61,7 +62,7 @@ public class ChapterViewModelRenderer extends Renderer<ChapterViewModel>
 
   @Override
   protected void setUpView(View view) {
-    ButterKnife.inject(this, view);
+    ButterKnife.bind(this, view);
   }
 
   @Override
